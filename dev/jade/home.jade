@@ -1,0 +1,43 @@
+//- Created by Hutber on 20/10/2015.
+include nav
+#index
+    //.intro
+    //    .cogFade
+    //        +cog(5, 'spinning big')
+//#holder
+.noClick
+.container.slideIn
+    .sliderContainer 
+        h2.sliderHeader
+            span
+        div(id="slider")
+        include home/timer
+    include home/playButton/button
+    .timeSoundMenu
+        .timeMenu
+            .interval
+                .intervalItem.active(data-id="1", data-number="one")
+                    .one
+                .intervalItem(data-id="2", data-number="two")
+                    .one
+                    .three
+                .intervalItem(data-id="3", data-number="three")
+                    .one
+                    .five
+                    .six
+                .intervalItem(data-id="4", data-number="four")
+                    .one
+                    .two
+                    .three
+                    .four
+        .soundMenu
+            .sound
+                .soundItem.active(data-id="1", data-type="bell")
+                    i.icon-bell
+                .soundItem(data-id="2", data-type="piano")
+                    i.icon-piano
+                .soundItem(data-id="3", data-type="gong")
+                    i.icon-gong
+                .soundItem(data-id="4", data-type="bowl")
+                    i.icon-bowl
+    include home/stop

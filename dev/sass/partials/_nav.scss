@@ -1,0 +1,89 @@
+nav {
+  //@include clear;
+  height: 70px;
+  //margin-top: 20px;
+  //.iOS {
+  //  margin-top: 20px;
+  //}
+  .icon-dotb {
+    //line-height: 120px;
+  }
+  .videos & .timer, body[class^="viewvide"] & .timer, body[class^="dark viewvide"] & .timer {
+    display: none;
+  }
+  .home & .videos, .splash & .videos {
+    display: none;
+  }
+  a, .light {
+    width: 20%;
+    height: 75px;
+    display: block;
+    float: right;
+    font-size: 4rem;
+    color: $red;
+  }
+  .light {
+    width: 60%;
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    text-align: center;
+    font-size: 3rem;
+    position: relative;
+
+    @include lightSlideDown(
+      $duration: .5s,
+      $delay: 2s
+    );
+
+    .light-line {
+      width: 4px;
+      height: 30px;
+      background: $red;
+      position: absolute;
+      left: 50%;
+      margin-left: -3px;
+      bottom: 0;
+    }
+  }
+
+  $largeDotSize: 20px;
+  .logo {
+    width: 65px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+    .dot {
+      width: 10px;
+      height: 10px;
+      color: $red;
+      position: absolute;
+      bottom: 9px;
+      left: 5px;
+    }
+    .icon-dotb {
+      font-size: 50px;
+      color: $blue;
+      padding-left: 10px;
+    }
+  }
+  .cog {
+    position: absolute;
+  }
+  .icon-untitled-6:before, .icon-dotb:before {
+    margin: 0;
+  }
+  //&.running {
+  //  a {
+  //    transform: translate3d(-100%, 0, 0);
+  //    visibility: hidden;
+  //  }
+  //  .menu {
+  //    visibility: hidden;
+  //    transform: translate3d(100%, 0, 0);
+  //  }
+  //}
+  //&.running.paused {
+  //  transform: none;
+  //}
+}

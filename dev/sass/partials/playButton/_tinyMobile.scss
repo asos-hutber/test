@@ -1,0 +1,43 @@
+@include tinyPhone {
+  /******
+  * Play/Pause Button
+  */
+  .playButtonItem {
+    width: $iPhone-4-playButtonItem;
+    height: $iPhone-4-playButtonItem;
+    font-size: $iPhone-4-playButtonItem-fs;
+
+    &.one {
+      .icon {
+        transform: translate3d(-50%, -85%,0);
+      }
+    }
+    &.two {
+      .icon {
+        transform: translate3d(-20%, -50%,0);
+      }
+    }
+    &.three {
+      .icon {
+        transform: translate3d(-50%, -15%,0);
+      }
+    }
+    &.four {
+      .icon {
+        transform: translate3d(-80%, -50%,0);
+      }
+    }
+  }
+  .button {
+    height: $iPhone-4-playButton-button;
+    width: $iPhone-4-playButton-button;
+    line-height: $iPhone-4-playButton-button;
+    .icon-play {
+      @include vertical-middle(50%, 50%);
+      font-size: 3.5rem;
+    }
+    .icon-pause {
+      font-size: 3rem;
+    }
+  }
+}

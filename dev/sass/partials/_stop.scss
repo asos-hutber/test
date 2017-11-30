@@ -1,0 +1,35 @@
+.stopButton {
+  height: 80px;
+  width: 80px;
+  border-radius: 5px;
+  color: #FFF;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translate3d(-50%, 200%, 0);
+  background: lighten($red, 35%);
+  border: $red $border-width solid;
+  //pointer-events: none;
+  &:before {
+    position: absolute;
+    content: " ";
+    background: $red;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    //border-radius: 10px  10px 0 0;
+  }
+  .icon {
+    font-size: 3rem;
+    @include vertical-middle()
+  }
+  
+  //sliding
+  .slideOut & {
+    @include slideInUp();
+  }
+  .running & {
+    pointer-events: auto;
+  }
+}

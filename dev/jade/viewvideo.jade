@@ -1,0 +1,38 @@
+//- Created by Hutber on 20/10/2015.
+include nav
+#videos
+    .container
+        .videoControls
+            a(href=previous).left &lt;
+            a(href=next).right &gt;
+        h1=title
+        .no-internet You need wi-fi or 3G/4G to watch the video
+        .iframe
+            iframe(width="100%", height="255", frameborder="0", type="text/html", id="ytplayer", scrolling="no", allowfullscreen="allowfullscreen", src=youtubeLink)
+        .volumecONTAINER
+            h2 Audio Version
+            #jquery_jplayer_1.jp-jplayer
+            #jp_container_1.jp-audio(role='application', aria-label='media player')
+              .jp-type-single
+                .jp-gui.jp-interface
+                  .jp-volume-controls
+                    button.jp-mute(role='button', tabindex='0') mute
+                    button.jp-volume-max(role='button', tabindex='0') max volume
+                    .jp-volume-bar
+                      .jp-volume-bar-value
+                  .jp-controls-holder
+                    .jp-controls
+                      button.jp-play(role='button', tabindex='0') 
+                        i.icon-play
+                        i.icon-pause
+                      button.jp-stop(role='button', tabindex='0') 
+                        i.icon-stop
+                    .jp-progress
+                      .jp-seek-bar
+                        .jp-play-bar
+                    .jp-current-time(role='timer', aria-label='time')
+                    .jp-duration(role='timer', aria-label='duration')
+                    .jp-toggles
+                      i.icon-arrows-cw.jp-repeat(role='button', tabindex='0')
+                .jp-details
+                  .jp-title(aria-label='title')

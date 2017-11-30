@@ -1,0 +1,21 @@
+@include keyframes(slideInUp) {
+  from {
+    -webkit-transform: translate3d(-50%, 200%, 0);
+    transform: translate3d(-50%, 200%, 0);
+  }
+
+  to {
+    -webkit-transform: translate3d(-50%, 0%, 0);
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+
+@mixin slideInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(slideInUp);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

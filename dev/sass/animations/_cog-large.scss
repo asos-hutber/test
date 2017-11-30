@@ -1,0 +1,62 @@
+@include keyframes(cog-large) {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1,1);
+    transform: translate3d(0, 0, 0) scale(1,1);
+  }
+  100% {
+    font-size: 11rem;
+    -webkit-transform: translate3d(20%, -30%, 0) scale(1,1);
+    transform: translate3d(20%, -30%, 0) scale(1,1);
+  }
+}
+
+@mixin cog-large-ios($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(cog-large-ios);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(cog-large-ios) {
+  0% {
+    font-size: 11rem;
+    transform: translate3d(20%, -30%, 0) scale(1,1);
+  }
+  100% {
+    font-size: 11rem;
+    transform:translate3d(20%, -20%, 0) scale(0,0);
+  }
+}
+
+@mixin cog-large($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(cog-large);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(cog-large-fadeOut) {
+  0% {
+    font-size: 11rem;
+    transform: translate3d(40%, -30%, 0) scale(1,1);
+  }
+  100% {
+    font-size: 11rem;
+    transform:translate3d(40%, -20%, 0) scale(0,0);
+  }
+}
+
+@mixin cog-large-fadeOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(cog-large-fadeOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

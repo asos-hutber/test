@@ -1,0 +1,254 @@
+/****************
+* Play Button
+*/
+.playButton {
+  @include vertical-middle(50%, 40%, 50%, 40%, scale(1, 1));
+  .slideIn & {
+    @include zoomIn(
+      $duration: 1s
+      //$delay: 1s
+    );
+  }
+  /******
+  * Timer
+  */
+  #timer {
+    //width: 100%;
+    //height: 100%;
+    transform: rotate(-90deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  /******
+  * 4 Icons around Play/Pause Button
+  */
+  .playButtonItem {
+    width: $desktop-play-button-widths;
+    height: $desktop-play-button-widths;
+    position: absolute;
+    font-size: $desktop-play-button-fs;
+    z-index: 2;
+    display: none;
+    .line, .icon {
+      position: absolute;
+      z-index: 3;
+    }
+    .line {
+      width: 8px;
+      height: 30px;
+      background: $red;
+      border-bottom: 15px solid #FFF;
+      border-radius: 5px;
+    }
+    .icon {
+      @include vertical-middle();
+      .slideOut & {
+        @include zoomOut(
+          $duration: .5s
+        );
+      }
+      .slideIn & {
+        @include zoomIn(
+          $duration: .5s
+        );
+      }
+    }
+    &.one, &.three {
+      left: 25%;
+      top: -50%;
+      transform: translate3d(-12.5%, 0%,0);
+      .icon {
+        @include vertical-middle(50%, 40%);
+      }
+      .line {
+        left: 50%;
+        bottom: 0;
+        transform: translate3d(-50%, -5%,0);
+      }
+    }
+    &.two, &.four {
+      right: -50%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        bottom: 50%;
+        transform: translate3d(150%, 50%,0) rotate(90deg);
+      }
+    }
+    &.three {
+      bottom: -50%;
+      top: auto;
+      .icon {
+        @include vertical-middle(50%, 60%);
+      }
+      .line {
+        bottom: auto;
+        top: 0;
+        transform: translate3d(-50%, 5%,0) rotate(180deg);
+      }
+    }
+    &.four {
+      right: auto;
+      left: -50%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(-150%, 50%,0) rotate(-90deg);
+        right: 0;
+      }
+      .icon {
+        @include vertical-middle(40%, 50%);
+      }
+    }
+    &.five {
+      right: -50%;
+      bottom: 0%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(-100%, 50%,0) rotate(-248deg);
+        right: auto;
+        left: 8px;
+      }
+    }
+    &.six {
+      right: auto;
+      left: -50%;
+      bottom: 0%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(100%, 50%,0) rotate(248deg);
+        right: 8px;
+        left: auto;
+      }
+    }
+  }
+  
+  /******
+  * Button Play/Pause
+  *******/
+  .button {
+    font-size: 20rem;
+    position: relative;
+    height: $desktop-play-button-widths;
+    width: $desktop-play-button-widths;
+    line-height: $desktop-play-button-widths;
+    background: lighten($red, 35%);
+    //border: $red $border-width solid;
+    border-radius: 300px;
+    //overflow: hidden;
+    color: #FFF;
+    
+    .icon-play, .icon-pause {
+      @include vertical-middle(10%, 50%);
+      z-index: 2;
+      font-size: 15rem;
+    }
+    
+    .icon-pause {
+      @include vertical-middle(50%, 50%, 50%, 50%, scale(0, 0));
+      font-size: 10rem;
+    }
+    .running & .icon-pause {
+      @include vertical-middle(50%, 50%, 50%, 50%, scale(1, 1));
+    }
+    .running & .icon-play {
+      @include vertical-middle(50%, 50%, 50%, 50%, scale(0, 0));
+    }
+    
+    .running & {
+      .icon-play {
+        @include zoomOut(
+          $duration: .2s
+        );
+      }
+      .icon-pause {
+        @include zoomIn(
+          $duration: .2s,
+          $delay: .2s
+        );
+      }
+    }
+    
+    &:before {
+      //margin: 0;
+    }
+    &:after {
+      position: absolute;
+      bottom: 0%;
+      left: 0%;
+      content: " ";
+      border-radius: 50%;
+      background: $red;
+      height: 100%;
+      width: 100%;
+    }
+    //.clock {
+    //  position: absolute;
+    //  width: 50%;
+    //  height: 100%;
+    //  overflow: hidden;
+    //  left: 150px;
+    //  transform-origin: left center;
+    //  transform: rotate(31deg);
+    //  z-index: 5;
+    //  &:BEFORE {
+    //  }
+    //  &:nth-of-type(2):AFTER, &:nth-of-type(2):BEFORE {
+    //    background-color: green;
+    //  }
+    //  &:BEFORE {
+    //    content: "";
+    //    background-color: green;
+    //    position: absolute;
+    //    width: 100%;
+    //    height: 100%;
+    //    left: -100px;
+    //    border-radius: 100px 0 0 100px;
+    //    transform: rotate(31deg);
+    //    transform-origin: right center;
+    //  }
+    //}
+  }
+  
+  //import the media queries 
+  @import './_mobile';
+  @import './_tinyMobile';
+}
+
+@mixin playButton($number){
+  .playButtonItem:nth-child(#{$number}){
+    display: block;
+    
+    .running & .icon {
+      display: none;
+    }
+    
+    .paused & {
+      display: none;
+    }
+  };
+}
+.playButtonControls {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  &.one {
+    @include playButton(1);
+  }
+  &.two {
+    @include playButton(1);
+    @include playButton(3);
+  }
+  &.three {
+    @include playButton(1);
+    @include playButton(5);
+    @include playButton(6);
+  }
+  &.four {
+    @include playButton(1);
+    @include playButton(2);
+    @include playButton(3);
+    @include playButton(4);
+  }
+}

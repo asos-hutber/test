@@ -1,0 +1,74 @@
+@include keyframes(zoomIn) {
+  0% {
+    @include vertical-middle(50%, 40%, 50%, 40%, scale(0, 0));
+  }
+  100% {
+    @include vertical-middle(50%, 40%, 50%, 40%, scale(1, 1));
+    visibility: visible;
+  }
+}
+
+@mixin zoomIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomIn);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomInPlayButton) {
+  0% {
+    @include vertical-middle(50%, 45%, 50%, 45%, scale(0, 0));
+  }
+  100% {
+    @include vertical-middle(50%, 45%, 50%, 45%, scale(1, 1));
+  }
+}
+
+@mixin zoomInPlayButton($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomInPlayButton);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(InPlayButtonPause) {
+  0% {
+    @include vertical-middle(10%, 50%, 10%, 50%, scale(0, 0));
+  }
+  100% {
+    @include vertical-middle(10%, 50%, 10%, 50%, scale(1, 1));
+  }
+}
+
+@mixin InPlayButtonPause($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(InPlayButtonPause);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+@include keyframes(lightSlideDown) {
+  0% {
+    transform: translate3d(0, -100%,0) rotate(-180deg);
+  }
+  100% {
+    transform: translate3d(0, 0,0) rotate(-180deg);
+  }
+}
+
+@mixin lightSlideDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(lightSlideDown);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

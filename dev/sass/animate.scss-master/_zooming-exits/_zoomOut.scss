@@ -1,0 +1,44 @@
+@include keyframes(zoomOut) {
+  0% {
+    @include vertical-middle(50%, 50%, 50%, 50%, scale(1, 1));
+  }
+  100% {
+    @include vertical-middle(50%, 50%, 50%, 50%, scale(0, 0));
+  }
+}
+
+@mixin zoomOut($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOut);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+
+@include keyframes(zoomOutIndex) {
+  0% {
+    //opacity: 1;
+    //transform: scale(1, 1);
+  }
+  50% {
+    //opacity: 0;
+  }
+  100% {
+    //opacity: 0;
+    //transform: scale(0, 0);
+    border-width: 0px;
+  }
+}
+
+@mixin zoomOutIndex($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(zoomOutIndex);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}
+  

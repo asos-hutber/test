@@ -1,0 +1,68 @@
+$timerWidths: 45px;
+/****************
+* Time Menu
+*/
+.timeSoundMenu {
+  height: 120px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.timeMenu {
+  display: block;
+  width: 100%;
+  height: $timerWidths;
+  background: $red;
+  border-radius: 30px;
+}
+.interval, .sound {
+  width: 275px;
+  margin: 0 auto;
+  height: 100%;
+  & > div {
+    background: #FFF;
+    height: 100%;
+    width: $timerWidths;
+    margin: 0 0 0 15px;
+    text-align: center;
+    font-size: 2.4rem;
+    display: inline-block;
+  }
+}
+.intervalItem {
+  border-radius: 30px;
+  position: relative;
+  &.active {
+    box-shadow: 0px 0px 4px 5px #FFF;
+    background: $red;
+    & div {
+      background: #fff;
+      box-shadow: 0px 0px 33px $red;
+    }
+  }
+  & div {
+    background: $red;
+    height: 15px;
+    width: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, -50%,0 );
+  } 
+}
+.sound {
+  background: #FFF;
+  margin-top: 20px;
+ 
+  &Item {
+    opacity: .7;
+    &.active {
+      opacity: 1;
+      & i:before {
+        text-shadow: 0px 0px 10px $red;
+      }
+    }
+  }
+}
+@import './intervalButtons';

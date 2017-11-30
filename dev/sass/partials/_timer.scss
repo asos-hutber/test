@@ -1,0 +1,47 @@
+$border-width: 4px;
+.timerContainer {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  transform: translate3d(-100%, 0, 0);
+  top: 0;
+  visibility: hidden;
+  
+  .time {
+    width: 180px;
+    margin: 0 auto;
+    height: 86px;
+    background: lighten($red, 35%);
+    border: $red $border-width solid;
+    color: #FFF;
+    position: relative;
+    font-size: 3rem;
+    line-height: 3.3rem;
+    font-weight: bold;
+    border-radius: 4px;
+    &:before {
+      position: absolute;
+      content: " ";
+      background: $red;
+      height: 100%;
+      width: 100%;
+      left: 0;
+      bottom: 0;
+      //border-radius: 4px;
+    }
+    
+    .timeText {
+      @include vertical-middle;
+      z-index: 3;
+    }
+
+    @include tinyPhone {
+      width: $iPhone-4-playButton-button;
+      height: 60px;
+      font-size: 2.3rem;
+    }
+    @include phone {
+      
+    }
+  }
+}

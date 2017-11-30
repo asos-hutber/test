@@ -1,0 +1,104 @@
+.splash {
+  .slideIn a.menu, .slideIn div.cog {
+    display: none;
+  }
+  .menu, a {
+    visibility: hidden !important;
+  }
+}
+
+.intro {
+  @extend .container;
+  width: 250px;
+  height: 280px;
+  margin: 0 auto;
+  @include vertical-middle(50%, 50%);
+  position: absolute;
+  //overflow: hidden;
+
+  .b {
+    width: 70%;
+    height: 300px;
+    display: inline-block;
+    color: $blue;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    z-index: 5;
+    i {
+      margin-right: -30px;
+    }
+    @include slideInDown(
+      $duration: 1s
+    );
+    &.breathing {
+      @include breathing(
+        $duration: 3.5s,
+        $count: infinite
+      ); 
+    }
+    &.smaller {
+      z-index: 1;
+      @include b-small-into-cog (
+        $duration: 1.7s
+        ,$count: 1
+      );
+    }
+    .dark &  {
+      color: $bulb;
+    }
+  }
+
+  .cogFade {
+    width: 100%;
+    height: 100%;
+    display: block;
+    float: left;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    
+    .cogElements {
+      height: 90px;
+    }
+    
+    .circle, .cog {
+      position: absolute;
+      bottom: 0;
+      left: 20px;
+      .iOS & {
+        //left: 40px;
+      }
+    }
+    .circle {
+      @include start(
+        $duration: 1s
+      );
+      border: $red solid 20px;
+      border-radius: 40px;
+      height: 40px;
+      width: 40px;
+      position: absolute;
+      bottom: 26px;
+      left: 32px;
+      .iOS & {
+        left: 32px;
+      }
+      z-index: 1;
+      &.zoomout {
+        @include zoomOutIndex(
+          $duration: 1s
+        );
+      }
+    }
+  }
+  
+  //remove all margin left on intro
+  .b .icon-dotb {
+    margin-right: -10px;
+  }
+  i:before {
+    margin: 0;
+    width: .8em;
+  }
+}

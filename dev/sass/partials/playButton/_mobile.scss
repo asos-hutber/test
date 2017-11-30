@@ -1,0 +1,79 @@
+@include phone {
+  .playButtonItem {
+    width: $iPhone-5-playButtonItem;
+    height: $iPhone-5-playButtonItem;
+    font-size: $iPhone-5-playButtonItem-fs;
+
+    &.one, &.three {
+      left: 25%;
+      top: -50%;
+      transform: translate3d(-12.5%, 0%, 0);
+      .line {
+        left: 50%;
+        bottom: 0;
+        transform: translate3d(-50%, -25%, 0);
+      }
+    }
+    &.two, &.four {
+      right: -50%;
+      transform: translate3d(5%, 25%, 0);
+      .line {
+        bottom: 50%;
+        transform: translate3d(130%, 50%, 0) rotate(90deg);
+      }
+    }
+    &.three {
+      bottom: -50%;
+      top: auto;
+      .line {
+        bottom: auto;
+        top: 0;
+        transform: translate3d(-50%, 23%,0) rotate(180deg);
+      }
+    }
+    &.four {
+      right: auto;
+      left: -50%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(-230%, 50%,0) rotate(-90deg);
+        right: 0;
+      }
+    }
+    &.five {
+      right: -50%;
+      bottom: 0%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(40%, 50%,0) rotate(-248deg);
+        right: auto;
+        left: 8px;
+      }
+    }
+    &.six {
+      right: auto;
+      left: -50%;
+      bottom: 0%;
+      transform: translate3d(0%, 25%,0);
+      .line {
+        transform: translate3d(-70%, 50%,0) rotate(248deg);
+        right: 8px;
+        left: auto;
+      }
+    }
+    
+  }
+  
+  .button {
+    height: $iPhone-5-playButton-button;
+    width: $iPhone-5-playButton-button;
+    line-height: $iPhone-5-playButton-button;
+    .icon-play {
+      @include vertical-middle(10%, 50%, 10%, 50%);
+      font-size: $iPhone-5-playPause-fs;
+    }
+    .icon-pause {
+      font-size: 6rem;
+    }
+  }
+}

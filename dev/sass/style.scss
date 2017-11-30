@@ -1,0 +1,191 @@
+//Config Sections
+@import 
+  '_phonegapReset',
+  '_variables',
+  '_fontello',
+  '_bFont', 
+  '_mixins',
+  './animate.scss-master/animate.scss';
+
+//Slide Animations
+@import
+'./slider/_slideIn',
+'./slider/_slideOut';
+
+//Partials Imports
+@import 
+  './partials/_nav',
+  './partials/_nouislider',
+  './partials/_timer',
+  './partials/_stop',
+  './partials/_runningPaused',
+  './partials/_slider',
+  './jplayer.blue.monday';
+html  {
+  //margin-top: 20px;
+}
+//Body/Html
+html, body {
+  color: $red;
+}
+
+.noClick {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+
+/****************
+* Cog
+*/
+.cog {
+  color: $red;
+  z-index: 10;
+  font-size: 5rem;
+  -webkit-backface-visibility: hidden;
+  .spinning:before {
+    @include spinning(
+    $duration: 4s,
+    $function: linear,
+    $count: infinite
+    );
+  }
+  &.large {
+    @include cog-large( 
+      $duration: 1.5s,
+      $count: 1
+    );
+    .icon-cog {
+      //@include vertical-middle()
+    }
+  }
+  .iOS & {
+    //left: 40px;
+  }
+  &.cog-large-fadeOut {
+    @include cog-large-fadeOut(
+      $duration: .2s,
+      $count: 1
+    );
+
+    .iOS & {
+      @include cog-large-ios(
+        $duration: .2s,
+        $count: 1
+      );
+      //left: -20px;
+    }
+  }
+  .iOS &.large {
+    //@include cog-large-ios(
+    //$duration: 1.5s,
+    //$count: 1
+    //);
+    left: 40px !important;
+  }
+
+  &.start {
+    @include start(
+      $duration: 1s,
+      $delay: .5s,
+      $count: 1
+    );
+  }
+  
+  //Home Page Styles for Cog
+  .home #index & {
+  }
+}
+$largeDotSize: 20px;
+.logo {
+  width: 45px;
+  margin: 0 auto;
+  position: relative;
+  transform: translate(-20px, 0);
+  .dot {
+    width: $largeDotSize;
+    height: $largeDotSize;
+  }
+  .icon-dotb {
+    font-size: 80px;
+  }
+}
+
+$dotSize: 5px;
+.dot {
+  background: $red;
+  height: $dotSize;
+  width: $dotSize;
+  border-radius: 50px;
+  display: block;
+}
+
+/****************
+* Home
+*/
+.home .noClick {
+  display: none;
+}
+
+/****************
+* Container
+*/
+.container {
+  width: 80%;
+  margin: 2% auto;
+  position: fixed;
+  //height: calc(100% - 70px);
+  left: 10%;
+  height: calc(100% - 90px);
+  //.iOS {
+  //  height: calc(100% - 90px);
+  //}
+}
+
+//.dark {
+  //.dark .icon-lightbulb:before {
+  //  text-shadow: 0 0 10px $seven;
+  //}
+  .icon-lightbulb {
+    position: relative;
+  }
+  .icon-lightbulb:after {
+    content: '';
+    position: absolute;
+    left: 32px;
+    top: 23px;
+    box-shadow: 0 0 38px 12px $seven;
+  }
+//}
+
+.no-internet {
+  color: #000;
+  width: 300px;
+  margin: 0 auto;
+  font-size: 19px;
+  font-family:dotbee9thfebmedium;
+  margin-top: -30px;
+  @include vertical-middle();
+  display: none;
+}
+
+.no-internetOn {
+  .no-internet {
+    display: block;
+  }
+  iframe {
+    display: none;
+  }
+
+}
+
+@import './partials/playButton/_playButton';
+@import './partials/playButton/_timeMenu';
+
+//Pages
+@import
+'./pages/_intro',
+'./pages/_videos',
+'pages/index',
+'./pages/_dark';

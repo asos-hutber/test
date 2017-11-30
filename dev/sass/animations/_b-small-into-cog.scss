@@ -1,0 +1,20 @@
+@include keyframes(b-small-into-cog) {
+  0% {
+    -webkit-transform: translate3d(-5px, -7px, 0) scale(1, 1);
+    transform: translate3d(-5px, -7px, 0) scale(1, 1);
+  }
+  100% {
+    -webkit-transform: translate3d(-50px, -30px, 0) scale(0, 0);
+    transform: translate3d(-50px, -30px, 0) scale(0, 0);
+  }
+}
+
+@mixin b-small-into-cog($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(b-small-into-cog);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

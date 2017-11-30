@@ -1,0 +1,45 @@
+//Variables
+$quickSpeed: .7s;
+$slowSpeed: .7s;
+$type: linear;
+
+.slideIn {
+  div.cog {
+    display: none;
+    @include slideInRight(
+    $duration: $quickSpeed,
+    $function: $type,
+    $count: 1
+    );
+  }
+  a.menu {
+    @include slideInLeft(
+    $duration: $quickSpeed,
+    $function: $type,
+    $count: 1
+    );
+  }
+  .sliderContainer {
+    @include slideInLeft(
+    $duration: $slowSpeed,
+    $function: $type,
+    $count: 1
+    );
+  }
+
+  .timeMenu {
+    @include slideInRight(
+    $duration: $slowSpeed,
+    $function: $type,
+    $count: 1
+    );
+  }
+
+  .soundMenu {
+    @include slideInLeft(
+    $duration: $slowSpeed,
+    $function: $type,
+    $count: 1
+    );
+  }
+}

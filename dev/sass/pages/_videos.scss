@@ -1,0 +1,356 @@
+$videoBoxWidth: 90px;
+$videoBoxPadding: $videoBoxWidth / 4;
+$videoBox: $videoBoxWidth * 2 + $videoBoxPadding;
+
+.videos, body[class^="viewvide"] {
+  overflow: hidden;
+  //overflow: auto;
+  .container {
+    width: 100%;
+    //position: static;
+
+    //height: auto;
+    height: 400px;
+    @include vertical-middle(0, 40%);
+    margin: 10% auto;
+  }
+  iframe {
+    border-radius: 5px;
+  }
+
+  .videoControls {
+    position: relative;
+    width: 100%;
+    font-size: 35px;
+    a {
+      height: 30px;
+      position: absolute;
+      left: 0px;
+      top: 2px;
+      line-height: 27px;
+      width: 40px;
+      text-align: center;
+      text-decoration: none;
+      &[href=""]{
+        display: none;
+      }
+    }
+    .right {
+      left: auto;
+      right: 0px;
+    }
+  }
+
+  h1, h2 {
+    font-family: dotbee9thfebmedium;
+    text-align: center;
+    font-size: 1.7rem;
+    margin-top: 5px;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.35rem;
+  }
+  .videoShell {
+    width: $videoBox;
+    //width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    max-height: 450px;
+    transition: all 2s ease;
+    &.finished {
+      overflow-x: auto;
+    }
+    @include vertical-middle();
+    a {
+      float: left;
+      width: $videoBoxWidth;
+      height: $videoBoxWidth;
+      overflow: hidden;
+      margin-right: $videoBoxPadding;
+      margin-top: $videoBoxPadding;
+      border-radius: 100%;
+      text-align: center;
+      position: relative;
+
+      &:nth-child(even) {
+        margin-right: 0;
+      }
+
+      img {
+        height: 90%;
+        @include vertical-middle()
+      }
+      &.one {
+        background: $one;
+        @include slideInRight();
+      }
+      &.two {
+        background: $two;
+        @include slideInRight();
+      }
+      &.three {
+        background: $three;
+        @include slideInRight(
+                $delay: .1s
+        );
+      }
+      &.four {
+        background: $four;
+        @include slideInRight(
+                $delay: .1s
+        );
+      }
+      &.five {
+        background: $five;
+        @include slideInRight(
+                $delay: .2s
+        );
+      }
+      &.six {
+        background: $six;
+        @include slideInRight(
+                $delay: .2s
+        );
+      }
+      &.seven {
+        background: $seven;
+        @include slideInRight(
+                $delay: .3s
+        );
+      }
+      &.eight {
+        background: $eight;
+        @include slideInRight(
+                $delay: .3s
+        );
+      }
+    }
+    &:after {
+      position: absolute;
+      content: '';
+      clear: both;
+    }
+  }
+}
+
+/*
+* Video Page Colours
+*/
+.viewvideo {
+  &one {
+    .cog, i, h1, h2, .videoControls a {
+      color: $one;
+    }
+    .light-line {
+      background: $one !important;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $one;
+    }
+    .jp-type-single {
+      color: $one;
+    }
+  }
+  &two {
+    .cog, i, h1, h2, .videoControls a {
+      color: $two;
+    }
+    .light-line {
+      background: $two !important;
+    }
+    .volume {
+      background-position: -108px 0;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $two;
+    }
+    .jp-type-single {
+      color: $two;
+    }
+  }
+  &three {
+    .cog, i, h1, h2, .videoControls a {
+      color: $three;
+    }
+    .light-line {
+      background: $three !important;
+    }
+    .volume {
+      background-position: 0 -106px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $three;
+    }
+    .jp-type-single {
+      color: $three;
+    }
+  }
+  &four {
+    .cog, i, h1, h2, .videoControls a {
+      color: $four;
+    }
+    .light-line {
+      background: $four !important;
+    }
+    .volume {
+      background-position: -108px -106px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $four;
+    }
+    .jp-type-single {
+      color: $four;
+    }
+  }
+  &five {
+    .cog, i, h1, h2, .videoControls a {
+      color: $five;
+    }
+    .light-line {
+      background: $five !important;
+    }
+    .volume {
+      background-position: 0px -216px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $five;
+    }
+    .jp-type-single {
+      color: $five;
+    }
+  }
+  &six {
+    .cog, i, h1, h2, .videoControls a {
+      color: $six;
+    }
+    .light-line {
+      background: $six !important;
+    }
+    .volume {
+      background-position: -109px -216px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $six;
+    }
+    .jp-type-single {
+      color: $six;
+    }
+  }
+  &seven {
+    .cog, i, h1, h2, .videoControls a {
+      color: $seven;
+    }
+    .light-line {
+      background: $seven !important;
+    }
+    .volume {
+      background-position: 0px -324px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $seven;
+    }
+    .jp-type-single {
+      color: $seven;
+    }
+  }
+  &eight {
+    .cog, i, h1, h2, .videoControls a {
+      color: $eight;
+    }
+    .light-line {
+      background: $eight !important;
+    }
+    .volume {
+      background-position: -109px -324px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $eight;
+    }
+    .jp-type-single {
+      color: $eight;
+    }
+  }
+  &ten {
+    .cog, i, h1, h2, .videoControls a {
+      color: $eight;
+    }
+    .light-line {
+      background: $eight !important;
+    }
+    .volume {
+      background-position: -109px -324px;
+    }
+    .jp-play, .jp-stop, .jp-play-bar {
+      background: $eight;
+    }
+    .jp-type-single {
+      color: $eight;
+    }
+  }
+}
+
+#videos {
+  .container {
+    //height: calc(100% - 220px);
+    //top: 56%;
+
+    //position: relative;
+    left: auto;
+    //transform: none;
+    .dark & {
+      //top: 25%;
+    }
+  }
+  .videos & .container {
+    height: calc(100% - 220px);
+    transition: all .5s ease;
+    @media screen and (max-height: 670px) {
+      height: calc(100% - 120px);
+    }
+    @media screen and (max-height: 570px) {
+      height: calc(100% - 80px);
+    }
+  }
+  .volumecONTAINER {
+    height: calc(37% - 80px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  .volume {
+    width: 70px;
+    height: 70px;
+    border-radius: 7px;
+    font-size: 2.4rem;
+    position: relative;
+    margin: 5px auto 0;
+    background-image: url(../img/audio.png);
+    background-size: 255%;
+    background-repeat: no-repeat;
+    display: block;
+    @include vertical-middle()
+  }
+  //i.icon-volume {
+  //  color: #FFF;
+  //  @include vertical-middle()
+  //}
+}
+
+
+.videos {
+  a.videohome {
+    display: none;
+  }
+}
+
+body[class^="viewvide"] {
+  .menu {
+    display: none;
+    padding: 5px 0 0 5px;
+  }
+  a.videohome {
+    display: block;
+  }
+}

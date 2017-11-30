@@ -1,0 +1,56 @@
+//Main Colours
+$red:       #F60017;
+$blue:      #19194D;
+
+/******
+* Media Query - Breakpoints
+*/
+$tiny-tablet-width: 320px;
+$tiny-tablet-height: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+/******
+* Videos
+*/
+$one:         #4FAED4; 
+$two:         #51E87B;
+$three:       #A57379;
+$four:        #D5DA7E;
+$five:        #7EADA9;
+$six:         #CE6AA8;
+$seven:       #FBD84B;
+$bulb:        #0066FF;
+$eight:       #D5D3D5;
+$orange:      #ff5728;
+
+/******
+* Media Query - iPhone 4
+*/
+//.playButton
+$iPhone-4-playButtonItem: 80px;
+$iPhone-4-playButtonItem-fs: 2rem;
+
+//.playButton .button
+$iPhone-4-playButton-button: 120px;
+
+
+/******
+* Media Query - iPhone 5+
+*/
+//.playButton
+$iPhone-5-playButtonItem: 115px;
+$iPhone-5-playButtonItem-fs: 2.6rem;
+
+//.playButton .button
+$iPhone-5-playButton-button: 180px;
+$iPhone-5-playPause-fs: 9rem;
+
+/******
+* Media Query - Desktop
+*/
+$desktop-play-button-widths: 130px;
+$desktop-play-button-fs: 2.4rem; 
+
+//.playButton .button
+$desktop-playButton-button: 160px;

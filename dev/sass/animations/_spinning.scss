@@ -1,0 +1,16 @@
+@include keyframes(spinning) {
+   100% {  
+     -webkit-transform: translate3d(0, 0, 0)  rotate(360deg);
+     transform: translate3d(0, 0, 0)  rotate(360deg);
+   }
+}
+
+@mixin spinning($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @include animation-name(spinning);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

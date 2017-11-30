@@ -1,0 +1,48 @@
+.slideOut {
+  div.cog {
+    @include slideOutLeft(
+        $duration: $quickSpeed,
+        $function: $type,
+        $count: 1
+    );
+  }
+  a.menu {
+    @include slideOutRight(
+        $duration: $quickSpeed,
+        $function: $type,
+        $count: 1
+    );
+  }
+  .sliderContainer {
+    @include slideOutRight(
+      $duration: $slowSpeed,
+      $function: $type,
+      $count: 1
+    );
+  }
+  
+  .timeMenu {
+    @include slideOutLeft(
+      $duration: $slowSpeed,
+      $function: $type,
+      $count: 1
+    );
+  }
+  
+  .soundMenu {
+    @include slideOutRight(
+      $duration: $slowSpeed,
+      $function: $type,
+      $count: 1
+    );
+  }
+  &.running {
+    .timerContainer {
+      @include slideOutRight(
+        $duration: $slowSpeed,
+        $function: $type,
+        $count: 1
+      );
+    } 
+  }
+}

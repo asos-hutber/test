@@ -1,0 +1,42 @@
+.running, .paused {
+  .sliderContainer {
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    .sliderHeader, #slider {
+      visibility: hidden;
+    }
+  }
+
+  .timerContainer {
+    visibility: visible;
+  }
+
+  .stopButton {
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  .playButtonItem {
+    transform: scale(0, 0);
+  }
+  .soundMenu, .timeMenu {
+    display: none;
+  }
+}
+
+.paused {
+  .icon-play {
+    @include InPlayButtonPause(
+    $duration: .2s,
+    $delay: .2s
+    );
+    //display: block;
+  }
+  .icon-pause {
+    @include zoomOut(
+    $duration: .2s
+    );
+  }
+}
+.slideOut .timerContainer {
+  visibility: visible;
+}
